@@ -8,5 +8,4 @@ services:
       - "443:443"
     volumes:
       - ${NGINX_FILES_PATH}/conf.d:/etc/nginx/conf.d
-      - ${NGINX_FILES_PATH}/vhost.d:/etc/nginx/vhost.d
       - ${NGINX_FILES_PATH}/html:/usr/share/nginx/html

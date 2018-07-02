@@ -10,5 +10,4 @@ RUN apk add --no-cache openssl &&\
     openssl x509 -req -sha256 -days 3650 -in server.csr -signkey server.key -out server.crt
 
 COPY ./nginx/conf.d /etc/nginx/conf.d
-COPY ./nginx/vhost.d /etc/nginx/vhost.d
 COPY ./nginx/html /usr/share/nginx/html
