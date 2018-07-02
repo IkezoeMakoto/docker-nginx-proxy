@@ -1,7 +1,8 @@
 version: '3'
 services:
   proxy-nginx:
-    image: nginx:1-alpine
+    build: ./proxy
+    container_name: proxy-nginx
     ports:
       - "80:80"
       - "443:443"
