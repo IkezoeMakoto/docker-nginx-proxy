@@ -1,4 +1,4 @@
-.PHONY: up down
+.PHONY: up down rerun
 
 .env:
 	@cp .env.example .env
@@ -8,3 +8,6 @@ up: .env
 
 down:
 	docker-compose down
+
+rerun:
+	docker-compose restart
