@@ -1,4 +1,4 @@
-FROM nginx:1-alpine
+FROM hrak/nginx-ldap
 
 WORKDIR /etc/nginx
 
@@ -9,5 +9,6 @@ RUN apk add --no-cache openssl &&\
     openssl req -new -key server.key -out server.csr -subj "/C=JP/ST=Tokyo/L=Shibuya/O=ZOE, Inc./OU=Development/CN=default" &&\
     openssl x509 -req -sha256 -days 3650 -in server.csr -signkey server.key -out server.crt
 
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./nginx/conf.d /etc/nginx/conf.d
 COPY ./nginx/html /usr/share/nginx/html

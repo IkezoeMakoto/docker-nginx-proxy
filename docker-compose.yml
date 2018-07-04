@@ -7,5 +7,6 @@ services:
       - "80:80"
       - "443:443"
     volumes:
+      - ${NGINX_FILES_PATH}/nginx.conf:/etc/nginx/nginc.conf
       - ${NGINX_FILES_PATH}/conf.d:/etc/nginx/conf.d
       - ${NGINX_FILES_PATH}/html:/usr/share/nginx/html
