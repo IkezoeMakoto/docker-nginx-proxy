@@ -1,4 +1,4 @@
 *
 !.gitignore
 !default.conf
-!vhost.example.conf
+!vhost.conf.example

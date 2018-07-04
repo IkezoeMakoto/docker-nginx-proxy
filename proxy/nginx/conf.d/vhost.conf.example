@@ -5,6 +5,10 @@ server {
     location ~ {
         # {hostマシンのプライベートIP}:{ホストマシンに露出しているポート}
         proxy_pass http://127.0.0.1:10080;
+
+        satisfy any;
+        auth_ldap 'Authentication Required';
+        auth_ldap_servers ldap-anyone;
     }
 }
 
@@ -18,5 +22,9 @@ server {
     location ~ {
         # {hostマシンのプライベートIP}:{ホストマシンに露出しているポート}
         proxy_pass https://127.0.0.1:10443;
+
+        satisfy any;
+        auth_ldap 'Authentication Required';
+        auth_ldap_servers ldap-anyone;
     }
 }
