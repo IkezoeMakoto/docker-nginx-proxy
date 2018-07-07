@@ -26,6 +26,9 @@ server {
 
     ssl_certificate /etc/nginx/server.crt;
     ssl_certificate_key /etc/nginx/server.key;
+    ssl_dhparam /etc/nginx/dhparam.pem;
+
+    add_header Strict-Transport-Security max-age=15768000;
 
     location ~ {
         # {hostマシンのプライベートIP}:{ホストマシンに露出しているポート}
