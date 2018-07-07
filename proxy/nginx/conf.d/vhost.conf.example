@@ -1,5 +1,12 @@
+ldap_server ldap-anyone {
+    # LDAP 認証を使う際はここに使用している LDAP サーバを記載してください
+    url ldaps://your.ldap.server;
+    require valid_user;
+}
+
 server {
     listen 80;
+    # 自分の使用したい vhost 名を設定してください
     server_name default.example.com;
 
     location ~ {
@@ -14,6 +21,7 @@ server {
 
 server {
     listen 443 ssl;
+    # 自分の使用したい vhost 名を設定してください
     server_name default.example.com;
 
     ssl_certificate /etc/nginx/server.crt;
