@@ -10,6 +10,6 @@ RUN apk add --no-cache openssl &&\
     openssl x509 -req -sha256 -days 3650 -in server.csr -signkey server.key -out server.crt && \
     openssl dhparam -out dhparam.pem 2048
 
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx/nginx.conf /nginx.conf
 COPY ./nginx/conf.d /etc/nginx/conf.d
 COPY ./nginx/html /usr/share/nginx/html
