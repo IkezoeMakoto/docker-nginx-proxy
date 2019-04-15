@@ -1,4 +1,4 @@
-.PHONY: up down rerun
+.PHONY: up down rerun test
 
 .env:
 	@cp .env.example .env
@@ -11,3 +11,6 @@ down:
 
 rerun:
 	docker-compose restart
+
+test:
+	docker-compose run --rm proxy-nginx nginx -t
